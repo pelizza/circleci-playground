@@ -9,7 +9,7 @@ jobs:
   first:
     executor: openjdk8
     steps:
-      - run: echo "first job"
+      - run: echo "only for tags"
   second:
     executor: openjdk8
     steps:
@@ -18,5 +18,8 @@ jobs:
 workflows:
   welcome:
     jobs:
-      - first
+      - first:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+/
       - second
