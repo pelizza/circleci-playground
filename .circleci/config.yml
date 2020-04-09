@@ -7,9 +7,11 @@ executors:
 
 jobs:
   first:
+    executor: openjdk8
     steps:
       - run: echo "first job"
   second:
+    executor: openjdk8
     steps:
       - run: echo "second job"
 
@@ -17,6 +19,4 @@ workflows:
   welcome:
     jobs:
       - first
-          executor: openjdk8
       - second
-          executor: openjdk8
