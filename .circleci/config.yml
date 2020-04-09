@@ -2,9 +2,11 @@ version: 2.1
 
 jobs:
   first:
-    - run: echo "first job"
+    steps:
+      - run: echo "first job"
   second:
-    - run: echo "second job"
+    steps:
+      - run: echo "second job"
 
 workflows:
   welcome:
