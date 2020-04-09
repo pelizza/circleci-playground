@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  openjdk8:
+    docker:
+      - image: maven:3.6-jdk-8
+
 jobs:
   first:
     steps:
@@ -12,4 +17,6 @@ workflows:
   welcome:
     jobs:
       - first
+          executor: openjdk8
       - second
+          executor: openjdk8
